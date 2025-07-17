@@ -265,26 +265,27 @@
       </div>
     </section>
 
+
   <!-- A parte do painel dá problema no WAVE porque eu tentei fazer
   um modal improvisado, mas ele não deixa eu encaminhar um link vazio na imagem. -->
   <section id="painel-fotos">
   <h2>★ Nosso painel de fotos:</h2>
   <div class="painel-fotos">
-    <a href="javascript:void(0)" class="span-2" onclick="openImage('img/foto1.webp'); return false;">
+    <div class="span-2">
       <div style="background-image: url('img/foto1.webp');"></div>
-    </a>
-    <a href="javascript:void(0)" onclick="openImage('img/foto2.webp'); return false;">
+    </div>
+    <div>
       <div style="background-image: url('img/foto2.webp');"></div>
-    </a>
-    <a href="javascript:void(0)" class="span-2" onclick="openImage('img/foto3.webp'); return false;">
+    </div>
+    <div class="span-2">
       <div style="background-image: url('img/foto3.webp');"></div>
-    </a>
-    <a href="javascript:void(0)" class="span-2" onclick="openImage('img/foto4.webp'); return false;">
+    </div>
+    <div class="span-2">
       <div style="background-image: url('img/foto4.webp');"></div>
-    </a>
-    <a href="javascript:void(0)" onclick="openImage('img/foto5.webp'); return false;">
+    </div>
+    <div>
       <div style="background-image: url('img/foto5.webp');"></div>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -301,29 +302,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  
-  <!-- Script do Modal -->
-  <script>
-    function openImage(src) {
-      const modal = document.getElementById('modal-imagem');
-      const img = document.getElementById('imagem-modal');
-      img.src = src;
-      modal.style.display = 'flex';
-    }
-
-    function closeImage() {
-      const modal = document.getElementById('modal-imagem');
-      modal.style.display = 'none';
-    }
-  </script>
-  <!-- Modal de imagem -->
-  <div id="modal-imagem" class="modal" onclick="closeImage()">
-    <div class="modal-conteudo" onclick="event.stopPropagation()">
-      <img id="imagem-modal" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Imagem ampliada">
-    </div>
-  </div>
-
-
 </body>
 </html>
-
