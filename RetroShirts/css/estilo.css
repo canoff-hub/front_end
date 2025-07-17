@@ -18,7 +18,7 @@
   .navbar-brand {
     font-family: var(--fonte-destaque);
   }
-
+  
   * {
     box-sizing: border-box;
     margin: 0;
@@ -33,14 +33,7 @@
     scroll-behavior: smooth;
     scroll-padding-top: 45px;
   }
-
-  .centralizado-coluna {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
+  
   
   body {
     font-family: var(--fonte-principal);
@@ -292,6 +285,13 @@
 #painel-fotos {
   min-height: 70vh;
   padding: var(--espacamento);
+}
+
+.centralizado-coluna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .painel-fotos {
