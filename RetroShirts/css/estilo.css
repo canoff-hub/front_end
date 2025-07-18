@@ -333,7 +333,6 @@ html {
 
 .scroll-animado {
   animation-name: fade-in;
-  animation-timeline: scroll-anim;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   opacity: 0;
