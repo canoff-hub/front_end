@@ -2,7 +2,7 @@ function showInfo(message)
 {   alert(String(message));
 }
 
-// Questionário interativo TiO2 (10 perguntas)
+//questionário interativo (10 perguntas)
 
 const quizData = [
   {pergunta: "Qual é o estado físico do dióxido de titânio à temperatura ambiente?", opcoes: ["Sólido","Líquido","Gasoso"], resposta:"Sólido", infoExtra:"O TiO₂ é um sólido branco cristalino à temperatura ambiente, usado como pigmento devido à sua opacidade."},
@@ -23,7 +23,7 @@ let score = 0;
 const quizArea = document.getElementById("quiz-area");
 const progress = document.getElementById("progress");
 
-// Cria barra de progresso visual
+//cria barra de progresso visual
 const progressBar = document.createElement("div");
 progressBar.style.height = "10px";
 progressBar.style.background = "#444";
@@ -37,7 +37,7 @@ progressFill.style.borderRadius = "5px";
 progressBar.appendChild(progressFill);
 quizArea.appendChild(progressBar);
 
-// Função para mostrar pergunta
+//funçao pra mostrar pergunta
 function showQuestion() {
   quizArea.innerHTML = ""; 
   quizArea.appendChild(progressBar);
@@ -61,7 +61,7 @@ function showQuestion() {
   updateProgress();
 }
 
-// Checa resposta e mostra feedback
+//checa resposta e mostra feedback
 function checkAnswer(button, selected) {
   const q = quizData[currentQuestion];
   const acertou = selected === q.resposta;
@@ -79,14 +79,14 @@ function checkAnswer(button, selected) {
   feedback.textContent = acertou ? "✅ Acertou!" : `❌ Errou! Resposta correta: ${q.resposta}`;
   quizArea.appendChild(feedback);
 
-  // Info extra
+  //info extra
   const infoEl = document.createElement("p");
   infoEl.style.color = "#ffcc70";
   infoEl.style.marginTop = "0.3rem";
   infoEl.textContent = q.infoExtra;
   quizArea.appendChild(infoEl);
 
-  // Próxima pergunta
+  //próxima pergunta
   currentQuestion++;
   if (currentQuestion < quizData.length) {
     setTimeout(showQuestion, 2000);
@@ -95,20 +95,20 @@ function checkAnswer(button, selected) {
   }
 }
 
-// Atualiza barra e texto de progresso
+//atualiza barra e texto de progresso
 function updateProgress() {
   progress.textContent = `${currentQuestion} / ${quizData.length}`;
   const percent = (currentQuestion / quizData.length) * 100;
   progressFill.style.width = percent + "%";
 }
 
-// Mostra pontuação final
+//mostra pontuação final
 function showFinalScore() {
   quizArea.innerHTML = `<p id='resultado'>🎉 Parabéns! Você completou o questionário.<br>Pontuação final: ${score} / ${quizData.length}</p>`;
   progressFill.style.width = "100%";
   progress.textContent = `${quizData.length} / ${quizData.length}`;
 }
 
-// Inicializa
+//inicializa
 showQuestion();
 
