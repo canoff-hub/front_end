@@ -17,6 +17,7 @@ const quizData = [
   {pergunta:"Qual é a estrutura cristalina mais comum do TiO₂?", opcoes:["Rutilo","Anatásio","Brookita"], resposta:"Rutilo", infoExtra:"O rutilo é a forma cristalina mais estável e mais utilizada industrialmente."}
 ];
 
+const questionTimer = 3400; //tempo entre as perguntas
 let currentQuestion = 0;
 let score = 0;
 
@@ -89,9 +90,9 @@ function checkAnswer(button, selected) {
   //próxima pergunta
   currentQuestion++;
   if (currentQuestion < quizData.length) {
-    setTimeout(showQuestion, 2000);
+    setTimeout(showQuestion, questionTimer);
   } else {
-    setTimeout(showFinalScore, 2000);
+    setTimeout(showFinalScore, questionTimer);
   }
 }
 
