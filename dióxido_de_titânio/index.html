@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dióxido de Titânio (TiO₂)</title>
+  <meta name="description" content="Trabalho JS-Química: página single sobre a substância dióxido de titânio. Contém informações fixas e questionário interativo.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">TiO₂</div>                                                                                                    
+        <div>
+          <h1>Dióxido de Titânio — TiO₂</h1>
+          <div class="subtitle">Página educativa — trabalho JS-Química</div>
+        </div>
+      </div>
+      <div class="meta">Aluno: <span class="badge">Henrique C. Rodrigues</span></div>
+    </header>
+
+    <main>
+      <section class="card info" aria-labelledby="info-title">
+        <h2 id="info-title">Informações fixas</h2>
+        <p class="meta">Resumo com propriedades principais, modelo estrutural e breve história.</p>
+
+        <div style="margin-top:12px" class="gridinfo">
+          <div class="prop">
+            <strong>Nome:</strong> Dióxido de Titânio<br>
+            <strong>Fórmula:</strong> TiO₂<br>
+            <strong>Estado à 25°C:</strong> Sólido<br>
+            <strong>Tipo de ligação:</strong> Iônica predominante<br>
+            <strong>Estrutura:</strong> Tetragonal (rutilo, a forma mais comum)
+          </div>
+
+          <div class="prop">
+            <strong>Ponto de fusão:</strong> ~1.843 °C<br>
+            <strong>Ponto de ebulição:</strong> ~2.972 °C<br>
+            <strong>Solubilidade:</strong> Insolúvel em água, solúvel em ácido sulfúrico<br>
+            <br><strong>Densidade:</strong> ~4.23 g·cm⁻³ (rutilo)
+          </div>
+        </div>
+
+        <h3 style="margin-top:14px">Modelo estrutural</h3>
+        <p class="meta">TiO₂ apresenta estrutura cristalina (rutilo, anatásio ou brookita). No rutilo, cada átomo de titânio está ligado a seis átomos de oxigênio em uma rede tetragonal.</p>
+
+        <h3 style="margin-top:14px">Visualização:</h3>
+        <div class="molecule">
+        <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- Átomo central de Titânio -->
+            <circle cx="150" cy="75" r="35" fill="#4f8cff" onclick="showInfo('Titânio\nNúmero atômico: 22\nMetal de transição leve')"/>
+            <text x="150" y="80" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">Ti</text>
+
+            <!-- Oxigênios -->
+            <circle cx="60" cy="75" r="25" fill="#ff6b6b" onclick="showInfo('Oxigênio\nNúmero atômico: 8\nGás incolor, inodoro, insípido e altamente eletronegativo')"/>
+            <text x="60" y="80" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">O</text>
+
+            <circle cx="240" cy="75" r="25" fill="#ff6b6b" onclick="showInfo('Oxigênio\nNúmero atômico: 8\nGás incolor, inodoro, insípido e altamente eletronegativo')"/>
+            <text x="240" y="80" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">O</text>
+
+            <!-- Ligações -->
+            <line x1="115" y1="75" x2="85" y2="75" stroke="#fff" stroke-width="4" />
+            <line x1="185" y1="75" x2="215" y2="75" stroke="#fff" stroke-width="4" />
+        </svg>
+        <p class="meta">Representação simplificada da molécula: átomo central de Titânio ligado a dois Oxigênios.</p>
+        </div>
+
+        <h3 style="margin-top:12px">História</h3>
+        <p class="meta">O dióxido de titânio foi descoberto no início do século XIX. Seu uso como pigmento branco ("titanium white") se popularizou no século XX, substituindo pigmentos tóxicos à base de chumbo.</p>
+
+        <h3 style="margin-top:12px">Obtenção e aplicações</h3>
+        <p>Produzido a partir de minerais como ilmenita e rutilo. É amplamente utilizado como pigmento em tintas, plásticos, papéis, cosméticos e protetores solares devido à sua alta opacidade e capacidade de absorver radiação UV.</p>
+
+      </section>
+
+      <aside class="card quiz" aria-labelledby="quiz-title">
+        <h2 id="quiz-title">Questionário interativo</h2>
+        <p class="meta">Responda corretamente para avançar — se errar, tenta de novo :)</p>
+
+        <div id="quiz-area"></div>
+        <div style="margin-top:12px;color:var(--muted);font-size:0.85rem">Progresso: <span id="progress">0 / 3</span></div>
+      </aside>
+
+    </main>
+
+    <footer class="card">
+      <div style="margin-top:8px" class="meta">Trabalho por Henrique C. Rodrigues - 2C | Professores: Nicolle Ruppenthal e Tiago Lopes Telecken</div>
+    </footer>
+  </div>
+
+  <script src="js/code.js"></script>
+</body>
+</html>
