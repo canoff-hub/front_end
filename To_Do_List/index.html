@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ToDo App — Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>ToDo — Tarefas</h1>
+      <p class="lead">Gerencia tarefas, grava/recupera no localStorage e baixa controle total.</p>
+    </header>
+
+    <section class="editor">
+      <form id="taskForm" novalidate>
+        <fieldset>
+          <legend>Nova tarefa</legend>
+
+          <div class="row">
+            <div class="col">
+              <label for="title">Título <span aria-hidden="true">*</span></label>
+              <input id="title" name="title" type="text" maxlength="80" required>
+            </div>
+
+            <div class="col">
+              <label for="responsible">Responsável</label>
+              <input id="responsible" name="responsible" type="text" maxlength="40" placeholder="Nome">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="start">Data início</label>
+              <input id="start" name="start" type="date">
+            </div>
+
+            <div class="col">
+              <label for="end">Data fim</label>
+              <input id="end" name="end" type="date">
+            </div>
+
+            <div class="col">
+              <label for="priority">Prioridade</label>
+              <select id="priority" name="priority">
+                <option value="baixa">Baixa</option>
+                <option value="media" selected>Média</option>
+                <option value="alta">Alta</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-full">
+              <label for="notes">Observação</label>
+              <textarea id="notes" name="notes" rows="3" maxlength="400" placeholder="Detalhes, instruções..."></textarea>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="addBtn" class="btn primary" type="submit">Adicionar tarefa</button>
+            <button id="resetForm" class="btn" type="button">Limpar formulário</button>
+          </div>
+        </fieldset>
+      </form>
+
+      <aside class="preview" aria-live="polite">
+        <h2>Preview</h2>
+        <div id="livePreview" class="card empty">
+          <p class="muted">Preencha o formulário para ver a pré-visualização</p>
+        </div>
+
+        <div class="storage-controls">
+          <button id="saveAll" class="btn">Gravar dados</button>
+          <button id="loadAll" class="btn">Recuperar dados</button>
+          <button id="clearAll" class="btn danger">Limpar dados</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lists">
+      <div class="panel">
+        <h2>Pendentes <span id="pendingCount" class="count">0</span></h2>
+        <ul id="pendingList" class="tasklist" aria-live="polite"></ul>
+      </div>
+
+      <div class="panel">
+        <h2>Concluídas <span id="doneCount" class="count">0</span></h2>
+        <ul id="doneList" class="tasklist" aria-live="polite"></ul>
+        <div class="done-controls">
+          <button id="clearDoneView" class="btn danger">Excluir todas concluidas (de vez)</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>ToDo App — feito para organizar sua agenda e facilitar sua vida ♡</small>
+    </footer>
+  </main>
+
+  <script src="code.js" defer></script>
+</body>
+</html>
